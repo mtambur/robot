@@ -74,7 +74,7 @@ Local Application with 4 environments DEV QA UAT PROD
     set suite variable  ${time}  ${time1}
     Log To Console  Creating application
     ${dto_result}=  Create application by name "myApp ${time}" description "Application for Scrum master scenario"
-    set suite variable  ${app_id}  ${dto_result.id}
+    set suite variable  ${app_id}  ${dto_result.applications[0.id]}
     Log To Console  Creating environments
     ${dto_env}=  Create Environment by name "DEV ${time}" description "Dev environment for Scrum master scenario" under application with id "${app_id}"
     set suite variable  ${dev_env_id}  ${dto_env.id}
